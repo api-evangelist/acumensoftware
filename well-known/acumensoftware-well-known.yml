@@ -1,0 +1,110 @@
+generated: '2026-09-06'
+method: probed
+source: direct HTTPS probe of each named path on every host this record knows
+note: >-
+  Every named /.well-known path missed on every host. The two marketing platforms answer differently: the Wix
+  hosts (www.acumensoft.net, www.forcelink.net, www.mysmart.city) return HTTP 400 with an HTML error page for
+  any unknown /.well-known/* path, and the application hosts return a real 404. Neither is a served document,
+  so NO WellKnown or SecurityTxt pointer is emitted in apis.yml — this file records a verified absence.
+hosts:
+  - host: www.acumensoft.net
+    documents:
+      - path: /.well-known/security.txt
+        status: 400
+      - path: /.well-known/openid-configuration
+        status: 400
+      - path: /.well-known/oauth-authorization-server
+        status: 400
+      - path: /.well-known/api-catalog
+        status: 400
+      - path: /.well-known/ai-plugin.json
+        status: 400
+      - path: /.well-known/agent-card.json
+        status: 400
+      - path: /.well-known/agent.json
+        status: 400
+      - path: /llms.txt
+        status: 200
+        file: llms/acumensoftware-llms.txt
+  - host: www.forcelink.net
+    documents:
+      - path: /.well-known/security.txt
+        status: 400
+      - path: /.well-known/openid-configuration
+        status: 400
+      - path: /.well-known/oauth-authorization-server
+        status: 400
+      - path: /.well-known/api-catalog
+        status: 400
+      - path: /.well-known/ai-plugin.json
+        status: 400
+      - path: /.well-known/agent-card.json
+        status: 400
+      - path: /.well-known/agent.json
+        status: 400
+      - path: /llms.txt
+        status: 200
+        file: llms/acumensoftware-forcelink-llms.txt
+  - host: www.mysmart.city
+    documents:
+      - path: /.well-known/security.txt
+        status: 400
+      - path: /.well-known/openid-configuration
+        status: 400
+      - path: /.well-known/oauth-authorization-server
+        status: 400
+      - path: /.well-known/api-catalog
+        status: 400
+      - path: /.well-known/ai-plugin.json
+        status: 400
+      - path: /.well-known/agent-card.json
+        status: 400
+      - path: /.well-known/agent.json
+        status: 400
+      - path: /llms.txt
+        status: 200
+        file: llms/acumensoftware-mysmartcity-llms.txt
+  - host: za2.forcelink.net
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 404
+  - host: app.mysmart.city
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+      - path: /llms.txt
+        status: 200
+        note: >-
+          SPA catch-all returning the app's HTML shell for every unmatched path, not an llms.txt. Treated as a
+          miss. Control probe: /openapi.json, /swagger.json, /api-docs and /docs return the identical shell.
+agent_card:
+  found: false
+  note: >-
+    No A2A agent card on any host, at either /.well-known/agent-card.json or the pre-0.3
+    /.well-known/agent.json. Per contract, no a2a/ artifact and no AgentCard pointer were written.

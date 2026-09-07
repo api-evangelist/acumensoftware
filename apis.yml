@@ -1,23 +1,167 @@
 aid: acumensoftware
-name: Acumensoftware
-description: 'Acumensoftware is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: Acumen Software
+description: >-
+  Acumen Software is a Johannesburg, South Africa software company founded in 2006 that builds highly
+  configurable mobile SaaS for work, workforce and asset management. Its flagship product Forcelink is a
+  mobile field-service ERP covering work management, workforce scheduling, asset and materials management,
+  fleet, project, facilities, CRM and outage management (Powerlink) for power and water utilities, telecoms,
+  transport, healthcare, forestry, mining, roads, waste, local government and municipal councils. A second
+  product line, My Smart City, is a citizen-engagement platform that lets residents log municipal service
+  faults, book vetted service providers, submit self-meter readings and pay municipal accounts, running on
+  the same Forcelink back end. Both products are delivered as hosted multi-tenant web and mobile apps; the
+  underlying REST surfaces are authenticated tenant APIs with no public developer program or published
+  contract.
+image: https://static.wixstatic.com/media/f3eb90_393c3a2fe853418ba367c5553bf6f8cc~mv2.png
 url: https://raw.githubusercontent.com/api-evangelist/acumensoftware/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-09-06'
 modified: '2026-09-06'
+position: Producing
 tags:
-- Company
-apis: []
+  - Field Service Management
+  - Workforce Management
+  - Asset Management
+  - Enterprise Resource Planning
+  - Smart Cities
+  - Local Government
+  - Utilities
+  - Mobile
+  - South Africa
+  - MCP
+tags_raw:
+  - field-service-management
+  - workforce-management
+  - asset-management
+  - enterprise-resource-planning
+  - smart-cities
+  - local-government
+  - utilities
+  - mobile
+  - south-africa
+  - mcp
+apis:
+  - name: Forcelink REST API
+    description: >-
+      Authenticated REST surface behind the Forcelink mobile field-service ERP, served from the vendor-hosted
+      za2.forcelink.net tenant alongside the Forcelink web login and the Forcelink Android/iOS apps. Every path
+      under /forcelink/rest answers HTTP 401 with {"error":"No authentication method supplied"} to anonymous
+      callers, including paths that do not exist, so no operation list, schema or spec is publicly observable.
+      Acumen Software publishes no developer portal, API reference or machine-readable contract for it.
+    humanURL: https://www.forcelink.net/
+    baseURL: https://za2.forcelink.net/forcelink/rest
+    tags:
+      - Field Service Management
+      - Workforce Management
+      - Asset Management
+      - Enterprise Resource Planning
+      - Utilities
+    tags_raw:
+      - field-service-management
+      - workforce-management
+      - asset-management
+      - enterprise-resource-planning
+      - utilities
+    x-access: gated
+    x-access-evidence:
+      - url: https://za2.forcelink.net/forcelink/rest
+        status: 401
+        note: '{"error":"No authentication method supplied"}'
+      - url: https://za2.forcelink.net/forcelink/rest/swagger.json
+        status: 401
+        note: Blanket auth filter; a 401 here is not evidence a spec exists behind it.
+      - url: https://za2.forcelink.net/forcelink/openapi.json
+        status: 404
+    properties:
+      - type: Login
+        url: https://za2.forcelink.net/forcelink/login
+  - name: My Smart City REST API
+    description: >-
+      Authenticated REST surface consumed by the My Smart City citizen web app at app.mysmart.city. The web
+      client's own JavaScript bundle names the base path /api/msc/rest/smartcitymanager/, and the same origin
+      proxies through to the Forcelink application (an unmapped path under /api/msc returns the Forcelink
+      Tomcat error page), confirming My Smart City runs on the Forcelink back end. Anonymous requests to the
+      REST tree return HTTP 401; there is no public reference or spec.
+    humanURL: https://www.mysmart.city/
+    baseURL: https://app.mysmart.city/api/msc/rest
+    tags:
+      - Smart Cities
+      - Local Government
+      - Mobile
+    tags_raw:
+      - smart-cities
+      - local-government
+      - mobile
+    x-access: gated
+    x-access-evidence:
+      - url: https://app.mysmart.city/api/msc/rest/
+        status: 401
+        note: '{"error":"No authentication method supplied"}'
+      - url: https://app.mysmart.city/api/msc/v2/api-docs
+        status: 404
+        note: Returns the Forcelink application 404 page, evidencing the shared back end.
+    properties:
+      - type: Login
+        url: https://app.mysmart.city/
+  - name: Acumen Software Site MCP
+    description: >-
+      Anonymous, remote MCP endpoint served on each of the three Acumen Software marketing domains. It is the
+      Wix platform's Site MCP, not a first-party Acumen or Forcelink product API — the nine tools it returns
+      are Wix site/content and Wix-docs tools, advertised by the Wix-generated llms.txt on each host. It is a
+      real, callable agent surface on a domain the company controls; it does not expose Forcelink or My Smart
+      City data.
+    humanURL: https://www.acumensoft.net/llms.txt
+    baseURL: https://www.acumensoft.net/_api/mcp
+    tags:
+      - MCP
+      - agent-native
+    tags_raw:
+      - mcp
+      - agent-native
+    properties:
+      - type: MCPServer
+        url: mcp/acumensoftware-mcp.yml
+      - type: MCPServer
+        url: https://www.acumensoft.net/_api/mcp
+      - type: LLMsTxt
+        url: https://www.acumensoft.net/llms.txt
 maintainers:
-- FN: Kin Lane
-  email: kin@apievangelist.com
-- FN: APIs.json
-  email: info@apis.io
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+  - FN: APIs.json
+    email: info@apis.io
 common:
-- type: Website
-  url: https://equityzen.com/company/acumensoftware
+  - type: Website
+    url: https://www.acumensoft.net/
+  - type: Support
+    url: https://www.acumensoft.net/contact
+  - type: Blog
+    url: https://www.forcelink.net/news-forcelink
+  - type: PrivacyPolicy
+    url: https://www.forcelink.net/privacy-policy
+  - type: TermsOfService
+    url: https://www.mysmart.city/termsandconditions
+  - type: Login
+    url: https://za2.forcelink.net/forcelink/login
+  - type: LLMsTxt
+    url: llms/acumensoftware-llms.txt
+  - type: MCPServer
+    url: mcp/acumensoftware-mcp.yml
+  - type: Conformance
+    url: conformance/acumensoftware-conformance.yml
+  - type: Compliance
+    url: conformance/acumensoftware-conformance.yml
+  - type: DomainSecurity
+    url: security/acumensoftware-domain-security.yml
+  - type: Packages
+    url: packages/acumensoftware-packages.yml
+  - type: Plans
+    url: plans/acumensoftware-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/acumensoftware-rate-limits.yml
+x-enrichment:
+  date: '2026-09-06'
+  status: enriched
+  artifacts_added: 12
+  pass: local-v3

@@ -1,0 +1,87 @@
+generated: '2026-09-06'
+method: probed
+source: https://www.acumensoft.net/_api/mcp
+name: Acumen Software Site MCP
+status: live
+authored_by: platform
+platform: Wix Site MCP
+authorship_note: >-
+  This server is generated and operated by the Wix website platform, not written by Acumen Software. It is
+  served from hosts Acumen Software controls and is advertised by the llms.txt on each of those hosts, so it
+  is a real agent surface reachable at the company's own domains — but its tools are Wix site/content and Wix
+  developer-docs tools. It does NOT expose the Forcelink or My Smart City product APIs, which are separate,
+  authenticated surfaces with no MCP server.
+deployment:
+  mode: remote
+  endpoint: https://www.acumensoft.net/_api/mcp
+  auth: none
+  verified: probed
+endpoints:
+  - host: www.acumensoft.net
+    url: https://www.acumensoft.net/_api/mcp
+    status: 200
+    advertised_by: https://www.acumensoft.net/llms.txt
+  - host: www.forcelink.net
+    url: https://www.forcelink.net/_api/mcp
+    status: 200
+    advertised_by: https://www.forcelink.net/llms.txt
+  - host: www.mysmart.city
+    url: https://www.mysmart.city/_api/mcp
+    status: 200
+    advertised_by: https://www.mysmart.city/llms.txt
+transport: streamable-http
+tools_list:
+  probed: '2026-09-06'
+  method: POST tools/list (jsonrpc 2.0, anonymous)
+  http_status: 200
+  file: mcp/acumensoftware-mcp-tools-list.json
+  tool_count: 9
+tools:
+  - name: GetBusinessDetails
+    description: Retrieves business and site details such as timezone, email, phone, and address.
+    inputs: []
+  - name: SearchInSite
+    description: Searches the site for information.
+    inputs:
+      - searchTerm
+  - name: SearchSiteApiDocs
+    description: Retrieves API documentation for the Wix business solutions installed on this site.
+    inputs:
+      - searchTerm
+  - name: GenerateVisitorToken
+    description: Creates a visitor session and returns a visitor access token for the site.
+    inputs: []
+  - name: CallWixSiteAPI
+    description: Calls Wix API methods on the site on a visitor's behalf.
+    inputs:
+      - visitorToken
+      - url
+      - method
+      - body
+  - name: ExecuteWixAPI
+    description: Executes Wix API code on the site.
+    inputs:
+      - code
+      - hasMutations
+      - reason
+      - sourceDocUrls
+      - visitorToken
+  - name: ReadFullDocsArticle
+    description: Fetches a complete article from the Wix developer documentation portal.
+    inputs:
+      - articleUrl
+  - name: ReadFullDocsMethodSchema
+    description: Fetches the full schema for a Wix API method.
+    inputs:
+      - articleUrl
+      - reason
+  - name: BrowseWixRESTDocsMenu
+    description: Browses the Wix REST documentation menu.
+    inputs:
+      - menuUrl
+      - reason
+first_party_mcp:
+  present: false
+  note: >-
+    No MCP server was found for the Forcelink or My Smart City product APIs. No candidate tool list was
+    derived, because no OpenAPI or other machine-readable contract for those APIs is published.

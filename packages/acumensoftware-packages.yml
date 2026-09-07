@@ -1,0 +1,58 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  registry.npmjs.org (name lookup + text search), pypi.org, plus the acumensoft.net, forcelink.net and
+  mysmart.city sitemaps and the Forcelink/My Smart City app store listings
+package_count: 0
+official_sdk_count: 0
+note: >-
+  No first-party client library, SDK or CLI is published by Acumen Software on any package registry. Direct
+  name lookups on npm (forcelink, acumensoft, mysmartcity, @forcelink/sdk) and PyPI (forcelink, acumensoft)
+  all returned 404, and an npm text search for "forcelink" and "acumensoft" returned only unrelated packages.
+  There is no GitHub organisation for the company either — api.github.com/orgs/{acumensoft,acumensoftware,
+  forcelink} all 404. github.com/mysmartcity exists but is an unrelated Romanian open-data project (blog
+  http://mysmartcity.ro/, last push 2016) and is NOT this company. Because no SDK exists, no `SDKs` pointer is
+  emitted in apis.yml.
+packages: []
+end_user_apps:
+  note: >-
+    Acumen Software does publish first-party MOBILE APPLICATIONS. These are end-user apps, not client
+    libraries, so they are recorded here for completeness and are deliberately not counted as SDKs.
+  entries:
+    - name: Forcelink
+      platform: android
+      id: net.acumensoft.forcelink.mobile
+      url: https://play.google.com/store/apps/details?id=net.acumensoft.forcelink.mobile
+      registry: google-play
+      version: null
+      published: null
+      version_note: Google Play publishes no unauthenticated metadata endpoint for version or release date.
+    - name: Forcelink
+      platform: ios
+      url: https://apps.apple.com/za/app/forcelink/id1457817480
+      registry: app-store
+      version: null
+      published: null
+      version_note: Not read; App Store version metadata was not fetched in this pass.
+    - name: My Smart City
+      platform: android
+      id: net.acumensoft.mysmartcityapp
+      url: https://play.google.com/store/apps/details?id=net.acumensoft.mysmartcityapp
+      registry: google-play
+      version: null
+      published: null
+      version_note: Google Play publishes no unauthenticated metadata endpoint for version or release date.
+    - name: MySmart City
+      platform: ios
+      url: https://apps.apple.com/app/mysmart-city/id1555236570
+      registry: app-store
+      version: null
+      published: null
+      version_note: Not read; App Store version metadata was not fetched in this pass.
+    - name: My Smart City
+      platform: huawei
+      url: https://appgallery.huawei.com/#/app/C113780369
+      registry: huawei-appgallery
+      version: null
+      published: null
+      version_note: No unauthenticated metadata endpoint.

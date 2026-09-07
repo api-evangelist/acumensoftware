@@ -1,0 +1,23 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://www.forcelink.net/ and https://www.mysmart.city/ (full page sitemaps walked), plus anonymous probes
+  of https://za2.forcelink.net/forcelink/rest and https://app.mysmart.city/api/msc/rest
+limit_count: 0
+note: >-
+  No rate limits are documented anywhere. Acumen Software publishes no developer portal, API reference or
+  terms-of-use section covering API quotas for the Forcelink or My Smart City REST surfaces. No limits could
+  be observed at runtime either: both REST trees reject anonymous requests with HTTP 401 before any
+  rate-limit headers are emitted. An honest zero, not an unchecked field.
+rate_limits: []
+response_headers_observed: []
+evidence:
+  - url: https://za2.forcelink.net/forcelink/rest
+    status: 401
+    finding: No X-RateLimit-*, RateLimit-* or Retry-After header on the 401 response
+  - url: https://app.mysmart.city/api/msc/rest/
+    status: 401
+    finding: No rate-limit headers on the 401 response
+  - url: https://www.forcelink.net/pages-sitemap.xml
+    status: 200
+    finding: No developer, docs, API or terms page exists that could carry published limits

@@ -1,0 +1,58 @@
+generated: '2026-09-06'
+method: probed
+source: >-
+  live DNS/TLS/HTTP probes of every host in apis.yml (probe-domain-security.py), extended by hand with the
+  same probes for www.mysmart.city and app.mysmart.city, which the script did not reach
+note: >-
+  No host publishes a CAA record and no domain is DNSSEC-signed. SPF and DMARC are present on all three
+  domains; only acumensoft.net enforces (p=quarantine), forcelink.net and mysmart.city are p=none. HSTS is
+  set on the three Wix-hosted marketing hosts and absent on both application hosts (za2.forcelink.net,
+  app.mysmart.city) — the hosts that actually carry the authenticated API traffic.
+hosts:
+- host: www.acumensoft.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov 10 10:59:56 2026 GMT
+  hsts: true
+  hsts_max_age: 31556952
+- host: www.forcelink.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Dec  2 05:27:53 2026 GMT
+  hsts: true
+  hsts_max_age: 31556952
+- host: za2.forcelink.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct 24 01:29:24 2026 GMT
+  hsts: false
+- host: www.mysmart.city
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  9 22:59:47 2026 GMT
+  hsts: true
+  hsts_max_age: 31556952
+- host: app.mysmart.city
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Jan 19 23:59:59 2027 GMT
+  hsts: false
+domains:
+- domain: acumensoft.net
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
+- domain: forcelink.net
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none
+- domain: mysmart.city
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: none

@@ -1,0 +1,25 @@
+generated: '2026-09-06'
+method: searched
+source: >-
+  https://www.forcelink.net/pages-sitemap.xml, https://www.mysmart.city/pages-sitemap.xml,
+  https://www.acumensoft.net/pages-sitemap.xml, https://www.mysmart.city/mysmartcity-pro
+plan_count: 0
+currency: null
+note: >-
+  Acumen Software publishes no pricing for any product. The full page sitemaps of all three sites were walked
+  and none contains a pricing or plans page. Forcelink routes every commercial conversation through "Request
+  Demo" and "Contact Us"; the partner programme page describes tiered reseller/channel options but attaches no
+  prices. My Smart City is free to citizens and its paid tier, "My Smart City Pro", is sold to municipalities
+  and councils and lists features only, with no price, quota or billing period. This is an enterprise
+  contact-sales motion, not an undiscovered pricing page.
+plans: []
+evidence:
+  - url: https://www.forcelink.net/pages-sitemap.xml
+    status: 200
+    finding: 9 pages, none of them pricing or plans
+  - url: https://www.mysmart.city/mysmartcity-pro
+    status: 200
+    finding: Pro tier described by feature only; no price, quota or billing period
+  - url: https://www.forcelink.net/partner-programme-forcelink
+    status: 200
+    finding: Tiered partner programme with no published prices
