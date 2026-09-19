@@ -23,7 +23,7 @@ tags:
   - Field Service Management
   - Workforce Management
   - Asset Management
-  - Enterprise Resource Planning
+  - ERP
   - Smart Cities
   - Local Government
   - Utilities
@@ -55,7 +55,7 @@ apis:
       - Field Service Management
       - Workforce Management
       - Asset Management
-      - Enterprise Resource Planning
+      - ERP
       - Utilities
     tags_raw:
       - field-service-management
