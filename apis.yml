@@ -115,7 +115,7 @@ apis:
     baseURL: https://www.acumensoft.net/_api/mcp
     tags:
       - MCP
-      - agent-native
+      - Agent-Native
     tags_raw:
       - mcp
       - agent-native
@@ -126,6 +126,9 @@ apis:
         url: https://www.acumensoft.net/_api/mcp
       - type: LLMsTxt
         url: https://www.acumensoft.net/llms.txt
+    x-surface: platform-generated
+    x-platform: wix
+    x-platform-surface: site-mcp
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
