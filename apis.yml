@@ -20,7 +20,7 @@ created: '2026-09-06'
 modified: '2026-10-06'
 position: Producing
 tags:
-  - Field Service Management
+  - Field Service
   - Workforce Management
   - Asset Management
   - ERP
@@ -52,7 +52,7 @@ apis:
     humanURL: https://www.forcelink.net/
     baseURL: https://za2.forcelink.net/forcelink/rest
     tags:
-      - Field Service Management
+      - Field Service
       - Workforce Management
       - Asset Management
       - ERP
