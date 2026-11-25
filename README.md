@@ -66,7 +66,7 @@
 
 Acumen Software is a Johannesburg, South Africa software company founded in 2006 that builds highly configurable mobile SaaS for work, workforce and asset management. Its flagship product Forcelink is a mobile field-service ERP covering work management, workforce scheduling, asset and materials management, fleet, project, facilities, CRM and outage management (Powerlink) for power and water utilities, telecoms, transport, healthcare, forestry, mining, roads, waste, local government and municipal councils. A second product line, My Smart City, is a citizen-engagement platform that lets residents log municipal service faults, book vetted service providers, submit self-meter readings and pay municipal accounts, running on the same Forcelink back end. Both products are delivered as hosted multi-tenant web and mobile apps; the underlying REST surfaces are authenticated tenant APIs with no public developer program or published contract.
 
-**Areas:** Field Service · Workforce Management · Asset Management · ERP · Smart Cities · Local Government · Utilities · Mobile · South Africa · MCP
+**Areas:** Field Service Management · Workforce Management · Asset Management · ERP · Smart Cities · Local Government · Utilities · Mobile · South Africa · MCP
 
 ## Acumen Software on APIs.io
 
@@ -92,19 +92,19 @@ Model Context Protocol servers that expose the API to agents.
 
 Authentication, trust centre, and vulnerability disclosure.
 
-- [Acumensoftware Domain Security](https://apis.io/security/acumensoftware/acumensoftware-domain-security/)
+- [Acumen Software Domain Security](https://apis.io/security/acumensoftware/acumensoftware-domain-security/)
 
 #### Plans and pricing (1)
 
 Published plans, tiers and prices.
 
-- [Acumensoftware Plans Pricing](https://apis.io/plans/acumensoftware/acumensoftware-plans-pricing/)
+- [Acumen Software Plans Pricing](https://apis.io/plans/acumensoftware/acumensoftware-plans-pricing/)
 
 #### Rate limits (1)
 
 Published request limits.
 
-- [Acumensoftware Rate Limits](https://apis.io/rate-limits/acumensoftware/acumensoftware-rate-limits/)
+- [Acumen Software Rate Limits](https://apis.io/rate-limits/acumensoftware/acumensoftware-rate-limits/)
 
 ## Where to find this API
 
@@ -118,7 +118,7 @@ Links to the company's own pages. This repository publishes no copy of their spe
 
 ## API Evangelist rating
 
-**Kin Score 19.7** — emerging · rubric 0.24.0 · scored 2026-10-17
+**Kin Score 20.8** — emerging · rubric 0.28.1 · scored 2026-11-21
 
 | Facet | Score |
 |---|---|
@@ -127,9 +127,9 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Contract governance | 18.2 |
 | Operational transparency | 0.0 |
 | Developer ergonomics | 7.1 |
-| Access clarity | 35.5 |
+| Access clarity | 44.7 |
 
-**Agent readiness 4.7** — human-only
+**Agent readiness 4.6** — human-only
 
 | Agent-readiness dimension | Result |
 |---|---|
@@ -152,8 +152,14 @@ Links to the company's own pages. This repository publishes no copy of their spe
 | Protected Resource Metadata | — |
 | Dynamic Client Registration | — |
 | Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+| MCP Tool Quality | na |
+| Onboarding Descriptor | — |
+| Dns Aid Index | na |
+| Markdown Negotiation | na |
 
-**Regulatory alignment 19.7** — Energy & Utilities
+**Regulatory alignment 14.8** — Energy & Utilities
 
 The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/acumensoftware/](https://apis.io/providers/acumensoftware/).
 
